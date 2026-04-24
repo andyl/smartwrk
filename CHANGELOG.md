@@ -5,6 +5,19 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## v0.0.4 (2026-04-24)
+
+
+
+
+### Bug Fixes:
+
+* update page references by andyl
+
+* add symlink for local access by andyl
+
+* config for github by andyl
+
 ## v0.0.3 (2026-04-24)
 
 
