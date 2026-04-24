@@ -29,8 +29,7 @@ if config_env() == :prod do
   # to check this value into version control, so we use an environment
   # variable instead.
   secret_key_base =
-    System.get_env("SECRET_KEY_BASE") ||
-      "XyQ2mV8rP4nL6kJ9fD3sH7gT1wB5aC0eZ8uI4oY2vN6xM0qR3tS9hF5jKasdedfwerer7lP1bGhW"
+    "XyQ2mV8rP4nL6kJ9fD3sH7gT1wB5aC0eZ8uI4oY2vN6xM0qR3tS9hF5jKasdedfwerer7lP1bGhW"
 
   host = System.get_env("PHX_HOST") || "example.com"
 
