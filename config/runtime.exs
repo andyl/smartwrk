@@ -31,12 +31,12 @@ if config_env() == :prod do
   secret_key_base =
     "XyQ2mV8rP4nL6kJ9fD3sH7gT1wB5aC0eZ8uI4oY2vN6xM0qR3tS9hF5jKasdedfwerer7lP1bGhW"
 
-  host = System.get_env("PHX_HOST") || "example.com"
+  host = System.get_env("PHX_HOST") || "andyl.github.io"
 
   config :smartwrk, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
   config :smartwrk, SmartwrkWeb.Endpoint,
-    url: [host: host, port: 80, scheme: "http"],
+    url: [host: host, port: 80, scheme: "http", path: "/smartwrk"],
     http: [
       ip: {0, 0, 0, 0, 0, 0, 0, 0}
     ],
