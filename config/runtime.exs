@@ -30,22 +30,15 @@ if config_env() == :prod do
   # variable instead.
   secret_key_base =
     System.get_env("SECRET_KEY_BASE") ||
-      raise """
-      environment variable SECRET_KEY_BASE is missing.
-      You can generate one by calling: mix phx.gen.secret
-      """
+      "XyQ2mV8rP4nL6kJ9fD3sH7gT1wB5aC0eZ8uI4oY2vN6xM0qR3tS9hF5jKasdedfwerer7lP1bGhW"
 
   host = System.get_env("PHX_HOST") || "example.com"
 
   config :smartwrk, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
   config :smartwrk, SmartwrkWeb.Endpoint,
-    url: [host: host, port: 443, scheme: "https"],
+    url: [host: host, port: 80, scheme: "http"],
     http: [
-      # Enable IPv6 and bind on all interfaces.
-      # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
-      # See the documentation on https://hexdocs.pm/bandit/Bandit.html#t:options/0
-      # for details about using IPv6 vs IPv4 and loopback vs public addresses.
       ip: {0, 0, 0, 0, 0, 0, 0, 0}
     ],
     secret_key_base: secret_key_base
