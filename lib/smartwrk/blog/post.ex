@@ -1,4 +1,4 @@
-defmodule Smwrk.Blog.Post do
+defmodule Smartwrk.Blog.Post do
   @enforce_keys [:id, :title, :body, :description, :tags, :date]
   defstruct [:id, :title, :body, :description, :tags, :date]
 

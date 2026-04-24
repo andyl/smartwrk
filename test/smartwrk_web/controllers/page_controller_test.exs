@@ -1,5 +1,5 @@
-defmodule SmwrkWeb.PageControllerTest do
-  use SmwrkWeb.ConnCase
+defmodule SmartwrkWeb.PageControllerTest do
+  use SmartwrkWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

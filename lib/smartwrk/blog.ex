@@ -1,9 +1,9 @@
-defmodule Smwrk.Blog do
-  alias Smwrk.Blog.Post
+defmodule Smartwrk.Blog do
+  alias Smartwrk.Blog.Post
 
   use NimblePublisher,
     build: Post,
-    from: Application.app_dir(:smwrk, "priv/posts/**/*.md"),
+    from: Application.app_dir(:smartwrk, "priv/posts/**/*.md"),
     as: :posts,
     highlighters: [:makeup_elixir, :makeup_erlang]
 

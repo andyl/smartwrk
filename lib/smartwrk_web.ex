@@ -1,12 +1,12 @@
-defmodule SmwrkWeb do
+defmodule SmartwrkWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use SmwrkWeb, :controller
-      use SmwrkWeb, :html
+      use SmartwrkWeb, :controller
+      use SmartwrkWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,7 +40,7 @@ defmodule SmwrkWeb do
     quote do
       use Phoenix.Controller, formats: [:html, :json]
 
-      use Gettext, backend: SmwrkWeb.Gettext
+      use Gettext, backend: SmartwrkWeb.Gettext
 
       import Plug.Conn
 
@@ -80,16 +80,16 @@ defmodule SmwrkWeb do
   defp html_helpers do
     quote do
       # Translation
-      use Gettext, backend: SmwrkWeb.Gettext
+      use Gettext, backend: SmartwrkWeb.Gettext
 
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components
-      import SmwrkWeb.CoreComponents
+      import SmartwrkWeb.CoreComponents
 
       # Common modules used in templates
       alias Phoenix.LiveView.JS
-      alias SmwrkWeb.Layouts
+      alias SmartwrkWeb.Layouts
 
       # Routes generation with the ~p sigil
       unquote(verified_routes())
@@ -99,9 +99,9 @@ defmodule SmwrkWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: SmwrkWeb.Endpoint,
-        router: SmwrkWeb.Router,
-        statics: SmwrkWeb.static_paths()
+        endpoint: SmartwrkWeb.Endpoint,
+        router: SmartwrkWeb.Router,
+        statics: SmartwrkWeb.static_paths()
     end
   end
 

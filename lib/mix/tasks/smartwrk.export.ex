@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.Smwrk.Export do
+defmodule Mix.Tasks.Smartwrk.Export do
   use Mix.Task
 
   @shortdoc "Export the site to priv/static_site"
@@ -28,14 +28,14 @@ defmodule Mix.Tasks.Smwrk.Export do
 
   defp exportable_paths do
     static_paths = ["/", "/about", "/tags"]
-    post_paths = Enum.map(Smwrk.Blog.all_posts(), &"/posts/#{&1.id}")
-    tag_paths = Enum.map(Smwrk.Blog.all_tags(), &"/tags/#{&1}")
+    post_paths = Enum.map(Smartwrk.Blog.all_posts(), &"/posts/#{&1.id}")
+    tag_paths = Enum.map(Smartwrk.Blog.all_tags(), &"/tags/#{&1}")
     static_paths ++ post_paths ++ tag_paths
   end
 
   defp render(path) do
     Phoenix.ConnTest.build_conn()
-    |> Phoenix.ConnTest.dispatch(SmwrkWeb.Endpoint, :get, path)
+    |> Phoenix.ConnTest.dispatch(SmartwrkWeb.Endpoint, :get, path)
     |> Phoenix.ConnTest.html_response(200)
   end
 
@@ -47,7 +47,7 @@ defmodule Mix.Tasks.Smwrk.Export do
   end
 
   defp copy_static_assets do
-    src = Application.app_dir(:smwrk, "priv/static")
+    src = Application.app_dir(:smartwrk, "priv/static")
     File.cp_r!(src, @output)
   end
 

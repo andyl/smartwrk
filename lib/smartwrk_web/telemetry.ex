@@ -1,4 +1,4 @@
-defmodule SmwrkWeb.Telemetry do
+defmodule SmartwrkWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -64,7 +64,7 @@ defmodule SmwrkWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {SmwrkWeb, :count_users, []}
+      # {SmartwrkWeb, :count_users, []}
     ]
   end
 end
