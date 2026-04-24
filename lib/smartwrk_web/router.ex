@@ -18,6 +18,8 @@ defmodule SmartwrkWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/posts/:id", PostsController, :post
+    get "/tags/:id",  TagsController, :tag
   end
 
   # Other scopes may use custom stacks.
