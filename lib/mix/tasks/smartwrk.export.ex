@@ -27,7 +27,8 @@ defmodule Mix.Tasks.Smartwrk.Export do
   end
 
   defp exportable_paths do
-    static_paths = ["/", "/about", "/tags"]
+    # static_paths = ["/", "/about", "/tags"]
+    static_paths = ["/"]
     post_paths = Enum.map(Smartwrk.Blog.all_posts(), &"/posts/#{&1.id}")
     tag_paths = Enum.map(Smartwrk.Blog.all_tags(), &"/tags/#{&1}")
     static_paths ++ post_paths ++ tag_paths
