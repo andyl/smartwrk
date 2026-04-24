@@ -56,7 +56,7 @@ defmodule Smartwrk.MixProject do
       # ----- operations
       {:igniter, "~> 0.7"},
       {:commit_hook, github: "andyl/commit_hook"},
-      {:git_ops, "~> 2.0", only: [:dev], runtime: false},
+      {:git_ops, "~> 2.0", only: [:dev, :test], runtime: false},
       # ----- LLM helpers
       {:tidewave, "~> 0.5", only: [:dev]},
       # ----- misc
