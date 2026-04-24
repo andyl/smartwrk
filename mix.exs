@@ -1,11 +1,13 @@
 defmodule Smartwrk.MixProject do
   use Mix.Project
 
+  @version "0.0.1"
+
   def project do
     [
       app: :smartwrk,
-      version: "0.1.0",
-      elixir: "~> 1.15",
+      version: @version,
+      elixir: "~> 1.18",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -54,6 +56,7 @@ defmodule Smartwrk.MixProject do
       # ----- operations
       {:igniter, "~> 0.7"},
       {:commit_hook, github: "andyl/commit_hook"},
+      {:git_ops, "~> 2.0", only: [:dev], runtime: false},
       # ----- misc
       {:swoosh, "~> 1.16"},
       {:req, "~> 0.5"},
@@ -67,7 +70,7 @@ defmodule Smartwrk.MixProject do
       # ----- blog publishing
       {:nimble_publisher, "~> 1.1"},
       {:makeup_elixir, "~> 1.0"},
-      {:makeup_erlang, "~> 1.0"},
+      {:makeup_erlang, "~> 1.0"}
     ]
   end
 
