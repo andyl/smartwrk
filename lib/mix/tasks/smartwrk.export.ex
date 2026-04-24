@@ -1,8 +1,8 @@
 defmodule Mix.Tasks.Smartwrk.Export do
   use Mix.Task
 
-  @shortdoc "Export the site to priv/static_site"
-  @output "priv/static_site"
+  @shortdoc "Export the site to @output"
+  @output "docs"
 
   @impl Mix.Task
   def run(_args) do
