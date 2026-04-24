@@ -51,6 +51,9 @@ defmodule Smartwrk.MixProject do
       {:esbuild, "~> 0.10", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
       {:heroicons, github: "tailwindlabs/heroicons", tag: "v2.2.0", sparse: "optimized", app: false, compile: false, depth: 1},
+      # ----- operations
+      {:igniter, "~> 0.7"},
+      {:commit_hook, github: "andyl/commit_hook"},
       # ----- misc
       {:swoosh, "~> 1.16"},
       {:req, "~> 0.5"},
