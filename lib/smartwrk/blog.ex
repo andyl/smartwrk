@@ -13,4 +13,17 @@ defmodule Smartwrk.Blog do
   def all_posts, do: @posts
   def all_tags, do: @tags
   def get_post_by_id!(id), do: Enum.find(@posts, &(&1.id == id)) || raise("no post #{id}")
+
+  def tag_slug(tag) do
+    tag
+    |> String.downcase()
+    |> String.replace(~r/[^a-z0-9]+/, "-")
+    |> String.trim("-")
+  end
+
+  def get_tag_by_slug!(slug) do
+    Enum.find(@tags, &(tag_slug(&1) == slug)) || raise("no tag #{slug}")
+  end
+
+  def posts_by_tag(tag), do: Enum.filter(@posts, &(tag in &1.tags))
 end

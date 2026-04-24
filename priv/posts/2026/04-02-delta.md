@@ -1,6 +1,8 @@
----
-title: "Delta Post"
-tags:  "ring, bong"
+%{
+  title: "Delta Post",
+  description: "A second post with a small table.",
+  tags: "ring, bong"
+}
 ---
 
 Another delta post.

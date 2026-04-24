@@ -1,7 +1,14 @@
 defmodule SmartwrkWeb.TagController do
   use SmartwrkWeb, :controller
 
-  def tag(conn, _params) do
-    render(conn, :tag)
+  alias Smartwrk.Blog
+
+  def index(conn, _params) do
+    render(conn, :index, tags: Blog.all_tags())
+  end
+
+  def show(conn, %{"id" => slug}) do
+    tag = Blog.get_tag_by_slug!(slug)
+    render(conn, :show, tag: tag, posts: Blog.posts_by_tag(tag))
   end
 end

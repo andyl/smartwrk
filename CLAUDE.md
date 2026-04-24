@@ -15,7 +15,7 @@ Phoenix v1.8 application (OTP app name `:smartwrk`, modules under `Smartwrk` / `
 - `mix precommit` — must pass before committing. Runs `compile --warnings-as-errors`, `deps.unlock --unused`, `format`, and `test`. `precommit` forces `MIX_ENV=test` via `cli/0` in `mix.exs`.
 - `mix test test/path/to/file_test.exs` — single file. `mix test --failed` — re-run last failures only.
 - `mix assets.build` / `mix assets.deploy` — dev / minified+digested asset builds.
-- `mix smartwrk.export` — render the whole site to `priv/static_site/` (see below).
+- `mix smartwrk.export` — render the whole site to `docs/` (see below).
 
 ## Architecture
 
@@ -27,9 +27,9 @@ Post filenames encode the date and slug: `priv/posts/YYYY/MM-DD-slug.md`. `Smart
 
 ### Static-site export is route-driven
 
-`mix smartwrk.export` (`lib/mix/tasks/smartwrk.export.ex`) spins up the app, walks a hardcoded list of paths (`/`, `/about`, `/tags`, plus one per post and per tag), dispatches each through `SmartwrkWeb.Endpoint` via `Phoenix.ConnTest`, and writes the HTML response to `priv/static_site/<path>/index.html`. Anything you want exported must both (a) be a real route in `SmartwrkWeb.Router` and (b) be listed in `exportable_paths/0`. The base URL in `sitemap/1` is a placeholder (`https://yoursite.com`) — update it before shipping a real sitemap.
+`mix smartwrk.export` (`lib/mix/tasks/smartwrk.export.ex`) spins up the app, walks a hardcoded list of paths (`/`, `/about`, `/posts`, `/tags`, plus one per post and per tag), dispatches each through `SmartwrkWeb.Endpoint` via `Phoenix.ConnTest`, and writes the HTML response to `docs/<path>/index.html`. Anything you want exported must both (a) be a real route in `SmartwrkWeb.Router` and (b) be listed in `exportable_paths/0`. The base URL in `sitemap/1` is a placeholder (`https://yoursite.com`) — update it before shipping a real sitemap.
 
-Current state: the router only defines `GET /`. The export task references `/about`, `/tags`, `/posts/:id`, and `/tags/:tag` routes that don't exist yet. When adding those routes, keep the export task's path list in sync.
+Tag URLs use `Smartwrk.Blog.tag_slug/1` so tags with spaces or punctuation map to URL-safe segments. Keep that helper as the single source of truth for tag → URL conversion.
 
 ### Web layer
 

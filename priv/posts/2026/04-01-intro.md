@@ -1,6 +1,8 @@
----
-title: "HELLO WORLD"
-tags:  "bing, bong"
+%{
+  title: "HELLO WORLD",
+  description: "An introductory post.",
+  tags: "bing, bong"
+}
 ---
 
 This is some intro text.

@@ -1,0 +1,17 @@
+<Layouts.app flash={@flash}>
+  <h1 class="text-3xl font-semibold tracking-tight">
+    Tag: <span class="font-mono">{@tag}</span>
+  </h1>
+  <ul class="space-y-6">
+    <li :for={post <- @posts} class="border-b border-base-300 pb-4">
+      <.link navigate={~p"/posts/#{post.id}"} class="text-xl font-semibold hover:underline">
+        {post.title}
+      </.link>
+      <div class="text-sm text-base-content/60">{post.date}</div>
+      <p class="mt-2 text-base-content/80">{post.description}</p>
+    </li>
+  </ul>
+  <div class="pt-6">
+    <.link navigate={~p"/tags"} class="link link-primary">&larr; All tags</.link>
+  </div>
+</Layouts.app>

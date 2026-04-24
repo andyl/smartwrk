@@ -1,0 +1,10 @@
+<Layouts.app flash={@flash}>
+  <h1 class="text-3xl font-semibold tracking-tight">About</h1>
+  <p class="text-base-content/70">
+    Smartworks is a content-driven Phoenix site. This page is a stub — fill in real content here.
+  </p>
+  <div class="flex gap-4 text-sm">
+    <.link navigate={~p"/posts"} class="link link-primary">All posts</.link>
+    <.link navigate={~p"/tags"} class="link link-primary">All tags</.link>
+  </div>
+</Layouts.app>

@@ -1,0 +1,13 @@
+<Layouts.app flash={@flash}>
+  <h1 class="text-3xl font-semibold tracking-tight">Tags</h1>
+  <ul class="flex flex-wrap gap-3">
+    <li :for={tag <- @tags}>
+      <.link
+        navigate={~p"/tags/#{Smartwrk.Blog.tag_slug(tag)}"}
+        class="badge badge-outline"
+      >
+        {tag} ({length(Smartwrk.Blog.posts_by_tag(tag))})
+      </.link>
+    </li>
+  </ul>
+</Layouts.app>

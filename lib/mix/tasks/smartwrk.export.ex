@@ -27,10 +27,9 @@ defmodule Mix.Tasks.Smartwrk.Export do
   end
 
   defp exportable_paths do
-    # static_paths = ["/", "/about", "/tags"]
-    static_paths = ["/"]
+    static_paths = ["/", "/about", "/posts", "/tags"]
     post_paths = Enum.map(Smartwrk.Blog.all_posts(), &"/posts/#{&1.id}")
-    tag_paths = Enum.map(Smartwrk.Blog.all_tags(), &"/tags/#{&1}")
+    tag_paths = Enum.map(Smartwrk.Blog.all_tags(), &"/tags/#{Smartwrk.Blog.tag_slug(&1)}")
     static_paths ++ post_paths ++ tag_paths
   end
 
@@ -41,6 +40,7 @@ defmodule Mix.Tasks.Smartwrk.Export do
   end
 
   defp write("/", html), do: File.write!(Path.join(@output, "index.html"), html)
+
   defp write(path, html) do
     dir = Path.join(@output, String.trim_leading(path, "/"))
     File.mkdir_p!(dir)
@@ -55,6 +55,7 @@ defmodule Mix.Tasks.Smartwrk.Export do
   defp sitemap(paths) do
     base = "https://yoursite.com"
     urls = Enum.map_join(paths, "\n", &"<url><loc>#{base}#{&1}</loc></url>")
+
     ~s(<?xml version="1.0"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n#{urls}\n</urlset>)
   end
 end

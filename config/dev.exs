@@ -44,7 +44,7 @@ config :smartwrk, SmartwrkWeb.Endpoint,
 
 # Reload browser tabs when matching files change.
 config :smartwrk, SmartwrkWeb.Endpoint,
-# config/dev.exs
+  # config/dev.exs
   live_reload: [
     web_console_logger: true,
     patterns: [
