@@ -44,9 +44,12 @@ config :smwrk, SmwrkWeb.Endpoint,
 
 # Reload browser tabs when matching files change.
 config :smwrk, SmwrkWeb.Endpoint,
+# config/dev.exs
   live_reload: [
     web_console_logger: true,
     patterns: [
+      # Blog Posts
+      ~r"priv/posts/.*(md)$",
       # Static assets, except user uploads
       ~r"priv/static/(?!uploads/).*\.(js|css|png|jpeg|jpg|gif|svg)$"E,
       # Gettext translations
