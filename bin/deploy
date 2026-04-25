@@ -3,23 +3,15 @@
 # exit immediately if any command fails
 set -e 
 
+# export 
+bin/export                    
+
 # remove symlink if it exists 
 if [ -L docs/smartworks ]; then
   rm docs/smartworks
 fi
 
-# commit outstanding git changes 
-if ! git diff-index --quiet HEAD -- || [ -n "$(git ls-files --others --exclude-standard)" ]; then
-  git add .
-  git commit -am"chore: cleanup"
-fi
-
-# release 
-bin/release
-mix compile
-
-# export 
-bin/export                    
+# final git commit 
 git add .                   
 git commit -am"chore: export to HTML" 
 
