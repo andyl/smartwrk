@@ -5,6 +5,21 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## v0.0.10 (2026-04-25)
+
+
+
+
+### Bug Fixes:
+
+* add version number by andyl
+
+* asdf by andyl
+
+* asdf by andyl
+
+* update deploy scripts by andyl
+
 ## v0.0.9 (2026-04-25)
 
 
