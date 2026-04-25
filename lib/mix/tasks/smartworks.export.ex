@@ -27,6 +27,10 @@ defmodule Mix.Tasks.Smartworks.Export do
     # the docs/ directory is served at the filesystem root locally.
     create_url_prefix_symlink()
 
+    # 5. Write .nojekyll
+    # this is so GitHub pages will serve the raw HTML, not Jekyll-processed html
+    File.touch!(Path.join(@output, ".nojekyll"))
+
     Mix.shell().info("Exported to #{@output}")
   end
 
