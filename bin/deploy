@@ -5,5 +5,5 @@ mix compile                    && \
 bin/export                     && \
 echo "----- PUSH TO GITHUB"    && \    
 git add .                      && \
-git commit -am'chore: deploy'  && \
+git commit -am"chore: deploy"  && \
 git push --follow-tags
