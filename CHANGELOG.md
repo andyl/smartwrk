@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## v0.0.16 (2026-04-25)
+
+
+
+
+### Bug Fixes:
+
+* remove symlink by andyl
+
 ## v0.0.15 (2026-04-25)
 
 
