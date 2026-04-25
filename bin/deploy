@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-bin/release                    && \
-mix compile                    && \
-bin/export                     && \
-echo "----- PUSH TO GITHUB"    && \    
-echo "> ADD"                   && \    
-git add .                      && \
-echo "> COMMIT"                && \    
-git commit -am"chore: deploy"  && \
-echo "> PUSH"                  && \    
+# exit immediately if any command fails
+set -e 
+
+bin/release                   
+mix compile                   
+bin/export                    
+
+echo "----- PUSH TO GITHUB"  
+git add .                   
+git commit -am"chore: deploy" 
 git push --follow-tags
