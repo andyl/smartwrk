@@ -5,6 +5,19 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## v0.0.5 (2026-04-25)
+
+
+
+
+### Bug Fixes:
+
+* update static site by andyl
+
+* add tags by andyl
+
+* add posts by andyl
+
 ## v0.0.4 (2026-04-24)
 
 
