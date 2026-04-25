@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## v0.0.6 (2026-04-25)
+
+
+
+
+### Bug Fixes:
+
+* add localhost symlink by andyl
+
 ## v0.0.5 (2026-04-25)
 
 
