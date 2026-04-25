@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-
+echo "----- GENERATE STATIC HTML"
 MIX_ENV=prod mix assets.build && \
 MIX_ENV=prod mix assets.deploy && \
 MIX_ENV=prod mix smartworks.export
