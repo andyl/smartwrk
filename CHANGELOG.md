@@ -5,6 +5,17 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## v0.0.7 (2026-04-25)
+
+
+
+
+### Bug Fixes:
+
+* highlight with html by andyl
+
+* create a .nojekyll file by andyl
+
 ## v0.0.6 (2026-04-25)
 
 
