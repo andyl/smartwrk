@@ -1,6 +1,7 @@
-#!/usr/bin/env deploy 
+#!/usr/bin/env bash
 
 bin/release                    && \
+mix compile                    && \
 bin/export                     && \
 echo "----- PUSH TO GITHUB"    && \    
 git add .                      && \
