@@ -1,4 +1,4 @@
-# Smartwrk
+# Smartworks
 
 To start your Phoenix server:
 

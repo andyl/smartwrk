@@ -6,7 +6,7 @@ import Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :smartwrk, SmartwrkWeb.Endpoint,
+config :smartworks, SmartworksWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}],
@@ -15,8 +15,8 @@ config :smartwrk, SmartwrkWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "dVOB5c7nUrzMNKCPLk2cEQ0kSHoz8BMbPArGLcUG2ZB6KVHQpBJRCqSg8cAx8xga",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:smartwrk, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:smartwrk, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:smartworks, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:smartworks, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -43,7 +43,7 @@ config :smartwrk, SmartwrkWeb.Endpoint,
 # different ports.
 
 # Reload browser tabs when matching files change.
-config :smartwrk, SmartwrkWeb.Endpoint,
+config :smartworks, SmartworksWeb.Endpoint,
   # config/dev.exs
   live_reload: [
     web_console_logger: true,
@@ -55,13 +55,13 @@ config :smartwrk, SmartwrkWeb.Endpoint,
       # Gettext translations
       ~r"priv/gettext/.*\.po$"E,
       # Router, Controllers, LiveViews and LiveComponents
-      ~r"lib/smartwrk_web/router\.ex$"E,
-      ~r"lib/smartwrk_web/(controllers|live|components)/.*\.(ex|heex)$"E
+      ~r"lib/smartworks_web/router\.ex$"E,
+      ~r"lib/smartworks_web/(controllers|live|components)/.*\.(ex|heex)$"E
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :smartwrk, dev_routes: true
+config :smartworks, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :default_formatter, format: "[$level] $message\n"

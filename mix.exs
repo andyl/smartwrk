@@ -1,11 +1,11 @@
-defmodule Smartwrk.MixProject do
+defmodule Smartworks.MixProject do
   use Mix.Project
 
   @version "0.0.5"
 
   def project do
     [
-      app: :smartwrk,
+      app: :smartworks,
       version: @version,
       elixir: "~> 1.18",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -22,7 +22,7 @@ defmodule Smartwrk.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Smartwrk.Application, []},
+      mod: {Smartworks.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -92,10 +92,10 @@ defmodule Smartwrk.MixProject do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["compile", "tailwind smartwrk", "esbuild smartwrk"],
+      "assets.build": ["compile", "tailwind smartworks", "esbuild smartworks"],
       "assets.deploy": [
-        "tailwind smartwrk --minify",
-        "esbuild smartwrk --minify",
+        "tailwind smartworks --minify",
+        "esbuild smartworks --minify",
         "phx.digest"
       ],
       precommit: ["compile --warnings-as-errors", "deps.unlock --unused", "format", "test"]
