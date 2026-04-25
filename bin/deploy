@@ -5,9 +5,10 @@ set -e
 
 bin/release                   
 mix compile                   
+
 bin/export                    
+git add .                   
+git commit -am"chore: export to HTML" 
 
 echo "----- PUSH TO GITHUB"  
-git add .                   
-git commit -am"chore: deploy" 
 git push --follow-tags
