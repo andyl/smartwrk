@@ -4,6 +4,9 @@ bin/release                    && \
 mix compile                    && \
 bin/export                     && \
 echo "----- PUSH TO GITHUB"    && \    
+echo "> ADD"                   && \    
 git add .                      && \
+echo "> COMMIT"                && \    
 git commit -am"chore: deploy"  && \
+echo "> PUSH"                  && \    
 git push --follow-tags
