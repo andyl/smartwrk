@@ -1,4 +1,4 @@
-<Layouts.flash_group flash={@flash} />
+<Layouts.app flash={@flash} current_path={@conn.request_path} full_bleed>
 <div class="left-[40rem] fixed inset-y-0 right-0 z-0 hidden lg:block xl:left-[50rem]">
   <svg
     viewBox="0 0 1480 957"
@@ -40,27 +40,6 @@
 </div>
 <div class="px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-28 xl:py-32">
   <div class="mx-auto max-w-xl lg:mx-0">
-    <div class="flex items-center gap-3">
-      <svg viewBox="0 0 48 48" class="h-12 w-12" aria-hidden="true">
-        <circle cx="24" cy="24" r="22" fill="none" stroke="#0F172A" stroke-width="2.5" />
-        <circle cx="24" cy="24" r="15" fill="none" stroke="#0F172A" stroke-width="2.5" />
-        <circle cx="24" cy="24" r="8" fill="none" stroke="#0F172A" stroke-width="2.5" />
-        <circle cx="24" cy="24" r="3.5" fill="#FD4F00" />
-      </svg>
-      <span class="text-4xl font-semibold tracking-tight text-slate-900">
-        Smartworks
-      </span>
-    </div>
-    <div class="mt-10 flex justify-between items-center">
-      <h1 class="flex items-center text-sm font-semibold leading-6">
-        Smartworks
-        <small class="badge badge-warning badge-sm ml-3">
-          v{Application.spec(:phoenix, :vsn)}
-        </small>
-      </h1>
-      <Layouts.theme_toggle />
-    </div>
-
     <p class="text-[2rem] mt-4 font-semibold leading-10 tracking-tighter text-balance">
       Peace of mind from prototype to production.
     </p>
@@ -205,3 +184,4 @@
     </div>
   </div>
 </div>
+</Layouts.app>

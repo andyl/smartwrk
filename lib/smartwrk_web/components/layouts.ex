@@ -12,6 +12,19 @@ defmodule SmartwrkWeb.Layouts do
   embed_templates "layouts/*"
 
   @doc """
+  Returns a cache-busting version string (mtime in seconds) for a static asset.
+  Lets the browser refetch the file whenever Tailwind/esbuild rewrites it in dev.
+  """
+  def asset_version(path) do
+    full = Application.app_dir(:smartwrk, ["priv", "static" | String.split(path, "/", trim: true)])
+
+    case File.stat(full) do
+      {:ok, %{mtime: mtime}} -> :calendar.datetime_to_gregorian_seconds(mtime)
+      _ -> 0
+    end
+  end
+
+  @doc """
   Renders your app layout.
 
   This function is typically invoked from every template,
@@ -31,39 +44,41 @@ defmodule SmartwrkWeb.Layouts do
     default: nil,
     doc: "the current [scope](https://hexdocs.pm/phoenix/scopes.html)"
 
+  attr :current_path, :string,
+    default: nil,
+    doc: "the current request path used to mark the active nav item"
+
+  attr :full_bleed, :boolean,
+    default: false,
+    doc: "skip the centered max-w-2xl inner wrapper around the slot"
+
   slot :inner_block, required: true
 
   def app(assigns) do
     ~H"""
-    <header class="navbar px-4 sm:px-6 lg:px-8">
+    <header class="navbar px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="flex-1">
-        <a href="/" class="flex-1 flex w-fit items-center gap-2">
-          <img src={~p"/images/logo.svg"} width="36" />
-          <span class="text-sm font-semibold">v{Application.spec(:phoenix, :vsn)}</span>
-        </a>
+        <.link navigate={~p"/"} class="flex w-fit items-center gap-2">
+          <img src={~p"/images/logo.svg"} width="36" alt="Smartworks" />
+          <span class="text-lg font-semibold tracking-tight">Smartworks</span>
+        </.link>
       </div>
       <div class="flex-none">
-        <ul class="flex flex-column px-1 space-x-4 items-center">
-          <li>
-            <a href="https://phoenixframework.org/" class="btn btn-ghost">Website</a>
-          </li>
-          <li>
-            <a href="https://github.com/phoenixframework/phoenix" class="btn btn-ghost">GitHub</a>
-          </li>
-          <li>
-            <.theme_toggle />
-          </li>
-          <li>
-            <a href="https://hexdocs.pm/phoenix/overview.html" class="btn btn-primary">
-              Get Started <span aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
+        <ul class="flex px-1 space-x-2 items-center">
+          <.nav_item label="Home" path={~p"/"} current_path={@current_path} />
+          <.nav_item label="About" path={~p"/about"} current_path={@current_path} />
+          <.nav_item label="Posts" path={~p"/posts"} current_path={@current_path} />
+          <.nav_item label="Tags" path={~p"/tags"} current_path={@current_path} />
         </ul>
       </div>
     </header>
 
-    <main class="px-4 py-20 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl space-y-4">
+    <main :if={@full_bleed}>
+      {render_slot(@inner_block)}
+    </main>
+
+    <main :if={!@full_bleed} class="px-6 py-16 sm:px-10 lg:px-16">
+      <div class="mx-auto max-w-3xl space-y-4">
         {render_slot(@inner_block)}
       </div>
     </main>
@@ -71,6 +86,31 @@ defmodule SmartwrkWeb.Layouts do
     <.flash_group flash={@flash} />
     """
   end
+
+  attr :label, :string, required: true
+  attr :path, :string, required: true
+  attr :current_path, :string, default: nil
+
+  defp nav_item(assigns) do
+    ~H"""
+    <li>
+      <span
+        :if={active?(@current_path, @path)}
+        class="px-4 font-semibold text-base-content"
+        style="text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;"
+      >
+        {@label}
+      </span>
+      <.link :if={!active?(@current_path, @path)} navigate={@path} class="btn btn-ghost">
+        {@label}
+      </.link>
+    </li>
+    """
+  end
+
+  defp active?(nil, _path), do: false
+  defp active?(current, "/"), do: current == "/"
+  defp active?(current, path), do: current == path or String.starts_with?(current, path <> "/")
 
   @doc """
   Shows the flash group with standard titles and content.

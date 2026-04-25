@@ -1,4 +1,4 @@
-<Layouts.app flash={@flash}>
+<Layouts.app flash={@flash} current_path={@conn.request_path}>
   <h1 class="text-3xl font-semibold tracking-tight">Tags</h1>
   <ul class="flex flex-wrap gap-3">
     <li :for={tag <- @tags}>
