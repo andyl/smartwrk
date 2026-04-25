@@ -1,16 +1,16 @@
-<!-- <SmartwrkWeb.Layouts.root> lib/smartwrk_web/components/layouts/root.html.heex:1 (smartwrk) --><!DOCTYPE html>
-<html data-phx-loc="2" lang="en">
-  <head data-phx-loc="3">
-    <meta data-phx-loc="4" charset="utf-8">
-    <meta data-phx-loc="5" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-phx-loc="6" name="csrf-token" content="bjIqOn4FCikXJjIqUStAKRMzIV4TdAkO8tes3KCKYLjP2nwJtvc-KDdF">
-    <!-- @caller lib/smartwrk_web/components/layouts/root.html.heex:7 (smartwrk) --><!-- <Phoenix.Component.live_title> lib/phoenix_component.ex:2248 (phoenix_live_view) --><title data-phx-loc="2249" data-default="Smartworks" data-suffix=" · Smartworks">Smartworks · Smartworks</title><!-- </Phoenix.Component.live_title> -->
-    <link data-phx-loc="10" rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <link data-phx-loc="11" rel="alternate icon" href="/favicon.ico">
-    <link data-phx-loc="12" phx-track-static rel="stylesheet" href="/assets/css/app.css">
-    <script data-phx-loc="13" defer phx-track-static type="text/javascript" src="/assets/js/app.js">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="KS86HWdVDh07CBs1fwkBIxUXAVhzKScxPnTxTfZvSLVMFg6JcD57GQVY">
+    <title data-default="Smartworks" data-suffix=" · Smartworks">Smartworks · Smartworks</title>
+    <link rel="icon" type="image/svg+xml" href="/smartwrk/images/favicon-a0e4824e5184214cfe688fe4e58002f6.svg?vsn=d">
+    <link rel="alternate icon" href="/smartwrk/favicon-76da9506cbf9e262913939624b7a1610.ico?vsn=d">
+    <link phx-track-static rel="stylesheet" href="/smartwrk/assets/css/app.css?v=63944295121">
+    <script defer phx-track-static type="text/javascript" src="/smartwrk/assets/js/app.js?v=63944295121">
     </script>
-    <script data-phx-loc="15">
+    <script>
       (() => {
         const setTheme = (theme) => {
           if (theme === "system") {
@@ -30,124 +30,122 @@
       })();
     </script>
   </head>
-  <body data-phx-loc="35">
-    <!-- <SmartwrkWeb.PostHTML.index> lib/smartwrk_web/controllers/post_html/index.html.heex:1 (smartwrk) --><!-- @caller lib/smartwrk_web/controllers/post_html/index.html.heex:1 (smartwrk) --><!-- <SmartwrkWeb.Layouts.app> lib/smartwrk_web/components/layouts.ex:37 (smartwrk) --><header data-phx-loc="38" class="navbar px-4 sm:px-6 lg:px-8">
-  <div data-phx-loc="39" class="flex-1">
-    <a data-phx-loc="40" href="/" class="flex-1 flex w-fit items-center gap-2">
-      <img data-phx-loc="41" src="/images/logo.svg" width="36">
-      <span data-phx-loc="42" class="text-sm font-semibold">v1.8.5</span>
+  <body>
+    <header class="navbar px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="flex-1">
+    <a href="/smartwrk/" data-phx-link="redirect" data-phx-link-state="push" class="flex w-fit items-center gap-2">
+      <img src="/smartwrk/images/logo-77022e46a8059a5e37965b8338256926.svg?vsn=d" width="36" alt="Smartworks">
+      <span class="text-lg font-semibold tracking-tight">Smartworks</span>
     </a>
   </div>
-  <div data-phx-loc="45" class="flex-none">
-    <ul data-phx-loc="46" class="flex flex-column px-1 space-x-4 items-center">
-      <li data-phx-loc="47">
-        <a data-phx-loc="48" href="https://phoenixframework.org/" class="btn btn-ghost">Website</a>
-      </li>
-      <li data-phx-loc="50">
-        <a data-phx-loc="51" href="https://github.com/phoenixframework/phoenix" class="btn btn-ghost">GitHub</a>
-      </li>
-      <li data-phx-loc="53">
-        <!-- @caller lib/smartwrk_web/components/layouts.ex:54 (smartwrk) --><!-- <SmartwrkWeb.Layouts.theme_toggle> lib/smartwrk_web/components/layouts.ex:124 (smartwrk) --><div data-phx-loc="125" class="card relative flex flex-row items-center border-2 border-base-300 bg-base-300 rounded-full">
-  <div data-phx-loc="126" class="absolute w-1/3 h-full rounded-full border-1 border-base-200 bg-base-100 brightness-200 left-0 [[data-theme=light]_&]:left-1/3 [[data-theme=dark]_&]:left-2/3 transition-[left]"></div>
-
-  <button data-phx-loc="128" class="flex p-2 cursor-pointer w-1/3" phx-click="[[&quot;dispatch&quot;,{&quot;event&quot;:&quot;phx:set-theme&quot;}]]" data-phx-theme="system">
-    <!-- @caller lib/smartwrk_web/components/layouts.ex:133 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-computer-desktop-micro size-4 opacity-75 hover:opacity-100"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
-  </button>
-
-  <button data-phx-loc="136" class="flex p-2 cursor-pointer w-1/3" phx-click="[[&quot;dispatch&quot;,{&quot;event&quot;:&quot;phx:set-theme&quot;}]]" data-phx-theme="light">
-    <!-- @caller lib/smartwrk_web/components/layouts.ex:141 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-sun-micro size-4 opacity-75 hover:opacity-100"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
-  </button>
-
-  <button data-phx-loc="144" class="flex p-2 cursor-pointer w-1/3" phx-click="[[&quot;dispatch&quot;,{&quot;event&quot;:&quot;phx:set-theme&quot;}]]" data-phx-theme="dark">
-    <!-- @caller lib/smartwrk_web/components/layouts.ex:149 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-moon-micro size-4 opacity-75 hover:opacity-100"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
-  </button>
-</div><!-- </SmartwrkWeb.Layouts.theme_toggle> -->
-      </li>
-      <li data-phx-loc="56">
-        <a data-phx-loc="57" href="https://hexdocs.pm/phoenix/overview.html" class="btn btn-primary">
-          Get Started <span data-phx-loc="58" aria-hidden="true">&rarr;</span>
-        </a>
-      </li>
+  <div class="flex-none">
+    <ul class="flex px-1 space-x-2 items-center">
+      <li>
+  
+  <a href="/smartwrk/" data-phx-link="redirect" data-phx-link-state="push" class="btn btn-ghost">
+    Home
+  </a>
+</li>
+      <li>
+  
+  <a href="/smartwrk/about" data-phx-link="redirect" data-phx-link-state="push" class="btn btn-ghost">
+    About
+  </a>
+</li>
+      <li>
+  
+  <a href="/smartwrk/posts" data-phx-link="redirect" data-phx-link-state="push" class="btn btn-ghost">
+    Posts
+  </a>
+</li>
+      <li>
+  
+  <a href="/smartwrk/tags" data-phx-link="redirect" data-phx-link-state="push" class="btn btn-ghost">
+    Tags
+  </a>
+</li>
     </ul>
   </div>
 </header>
 
-<main data-phx-loc="65" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div data-phx-loc="66" class="mx-auto max-w-2xl space-y-4">
-    <!-- <:inner_block> lib/smartwrk_web/controllers/post_html/index.html.heex:1 (smartwrk) -->
-  <h1 data-phx-loc="2" class="text-3xl font-semibold tracking-tight">Posts</h1>
-  <ul data-phx-loc="3" class="space-y-6">
-    <li data-phx-loc="4" class="border-b border-base-300 pb-4">
-      <!-- @caller lib/smartwrk_web/controllers/post_html/index.html.heex:5 (smartwrk) --><!-- <Phoenix.Component.link> lib/phoenix_component.ex:3095 (phoenix_live_view) --><a data-phx-loc="3096" href="/posts/delta" data-phx-link="redirect" data-phx-link-state="push" class="text-xl font-semibold hover:underline">
+
+
+<main class="px-6 py-16 sm:px-10 lg:px-16">
+  <div class="mx-auto max-w-3xl space-y-4">
+    
+  <h1 class="text-3xl font-semibold tracking-tight">Posts</h1>
+  <ul class="space-y-6">
+    <li class="border-b border-base-300 pb-4">
+      <a href="/smartwrk/posts/delta" data-phx-link="redirect" data-phx-link-state="push" class="text-xl font-semibold hover:underline">
         Delta Post
-      </a><!-- </Phoenix.Component.link> -->
-      <div data-phx-loc="8" class="text-sm text-base-content/60">2026-04-02</div>
-      <p data-phx-loc="9" class="mt-2 text-base-content/80">A second post with a small table.</p>
-      <div data-phx-loc="10" class="mt-2 flex flex-wrap gap-2">
-        <!-- @caller lib/smartwrk_web/controllers/post_html/index.html.heex:11 (smartwrk) --><!-- <Phoenix.Component.link> lib/phoenix_component.ex:3095 (phoenix_live_view) --><a data-phx-loc="3096" href="/tags/ring" data-phx-link="redirect" data-phx-link-state="push" class="badge badge-outline badge-sm">
+      </a>
+      <div class="text-sm text-base-content/60">2026-04-02</div>
+      <p class="mt-2 text-base-content/80">A second post with a small table.</p>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <a href="/smartwrk/tags/ring" data-phx-link="redirect" data-phx-link-state="push" class="badge badge-outline badge-sm">
           ring
-        </a><!-- </Phoenix.Component.link> --><!-- @caller lib/smartwrk_web/controllers/post_html/index.html.heex:11 (smartwrk) --><!-- <Phoenix.Component.link> lib/phoenix_component.ex:3095 (phoenix_live_view) --><a data-phx-loc="3096" href="/tags/bong" data-phx-link="redirect" data-phx-link-state="push" class="badge badge-outline badge-sm">
+        </a><a href="/smartwrk/tags/bong" data-phx-link="redirect" data-phx-link-state="push" class="badge badge-outline badge-sm">
           bong
-        </a><!-- </Phoenix.Component.link> -->
+        </a>
       </div>
-    </li><li data-phx-loc="4" class="border-b border-base-300 pb-4">
-      <!-- @caller lib/smartwrk_web/controllers/post_html/index.html.heex:5 (smartwrk) --><!-- <Phoenix.Component.link> lib/phoenix_component.ex:3095 (phoenix_live_view) --><a data-phx-loc="3096" href="/posts/intro" data-phx-link="redirect" data-phx-link-state="push" class="text-xl font-semibold hover:underline">
+    </li><li class="border-b border-base-300 pb-4">
+      <a href="/smartwrk/posts/intro" data-phx-link="redirect" data-phx-link-state="push" class="text-xl font-semibold hover:underline">
         HELLO WORLD
-      </a><!-- </Phoenix.Component.link> -->
-      <div data-phx-loc="8" class="text-sm text-base-content/60">2026-04-01</div>
-      <p data-phx-loc="9" class="mt-2 text-base-content/80">An introductory post.</p>
-      <div data-phx-loc="10" class="mt-2 flex flex-wrap gap-2">
-        <!-- @caller lib/smartwrk_web/controllers/post_html/index.html.heex:11 (smartwrk) --><!-- <Phoenix.Component.link> lib/phoenix_component.ex:3095 (phoenix_live_view) --><a data-phx-loc="3096" href="/tags/bing" data-phx-link="redirect" data-phx-link-state="push" class="badge badge-outline badge-sm">
+      </a>
+      <div class="text-sm text-base-content/60">2026-04-01</div>
+      <p class="mt-2 text-base-content/80">An introductory post.</p>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <a href="/smartwrk/tags/bing" data-phx-link="redirect" data-phx-link-state="push" class="badge badge-outline badge-sm">
           bing
-        </a><!-- </Phoenix.Component.link> --><!-- @caller lib/smartwrk_web/controllers/post_html/index.html.heex:11 (smartwrk) --><!-- <Phoenix.Component.link> lib/phoenix_component.ex:3095 (phoenix_live_view) --><a data-phx-loc="3096" href="/tags/bong" data-phx-link="redirect" data-phx-link-state="push" class="badge badge-outline badge-sm">
+        </a><a href="/smartwrk/tags/bong" data-phx-link="redirect" data-phx-link-state="push" class="badge badge-outline badge-sm">
           bong
-        </a><!-- </Phoenix.Component.link> -->
+        </a>
       </div>
     </li>
   </ul>
-<!-- </:inner_block> -->
+
   </div>
 </main>
 
-<!-- @caller lib/smartwrk_web/components/layouts.ex:71 (smartwrk) --><!-- <SmartwrkWeb.Layouts.flash_group> lib/smartwrk_web/components/layouts.ex:86 (smartwrk) --><div data-phx-loc="87" id="flash-group" aria-live="polite">
-  <!-- @caller lib/smartwrk_web/components/layouts.ex:88 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.flash> lib/smartwrk_web/components/core_components.ex:53 (smartwrk) --><!-- </SmartwrkWeb.CoreComponents.flash> -->
-  <!-- @caller lib/smartwrk_web/components/layouts.ex:89 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.flash> lib/smartwrk_web/components/core_components.ex:53 (smartwrk) --><!-- </SmartwrkWeb.CoreComponents.flash> -->
+<div id="flash-group" aria-live="polite">
+  
+  
 
-  <!-- @caller lib/smartwrk_web/components/layouts.ex:91 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.flash> lib/smartwrk_web/components/core_components.ex:53 (smartwrk) --><div data-phx-loc="54" id="client-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="toast toast-top toast-end z-50" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}],[&quot;set_attr&quot;,{&quot;attr&quot;:[&quot;hidden&quot;,&quot;&quot;]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-client-error #client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}],[&quot;remove_attr&quot;,{&quot;attr&quot;:&quot;hidden&quot;}]]">
-  <div data-phx-loc="62" class="alert w-80 sm:w-96 max-w-80 sm:max-w-96 text-wrap alert-error">
+  <div id="client-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="toast toast-top toast-end z-50" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}],[&quot;set_attr&quot;,{&quot;attr&quot;:[&quot;hidden&quot;,&quot;&quot;]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-client-error #client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}],[&quot;remove_attr&quot;,{&quot;attr&quot;:&quot;hidden&quot;}]]">
+  <div class="alert w-80 sm:w-96 max-w-80 sm:max-w-96 text-wrap alert-error">
     
-    <!-- @caller lib/smartwrk_web/components/core_components.ex:68 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-exclamation-circle size-5 shrink-0"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
-    <div data-phx-loc="69">
-      <p data-phx-loc="70" class="font-semibold">We can&#39;t find the internet</p>
-      <p data-phx-loc="71"><!-- <:inner_block> lib/smartwrk_web/components/layouts.ex:91 (smartwrk) -->
+    <span class="hero-exclamation-circle size-5 shrink-0"></span>
+    <div>
+      <p class="font-semibold">We can&#39;t find the internet</p>
+      <p>
     Attempting to reconnect
-    <!-- @caller lib/smartwrk_web/components/layouts.ex:100 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-arrow-path ml-1 size-3 motion-safe:animate-spin"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
-  <!-- </:inner_block> --></p>
+    <span class="hero-arrow-path ml-1 size-3 motion-safe:animate-spin"></span>
+  </p>
     </div>
-    <div data-phx-loc="73" class="flex-1"></div>
-    <button data-phx-loc="74" type="button" class="group self-start cursor-pointer" aria-label="close">
-      <!-- @caller lib/smartwrk_web/components/core_components.ex:75 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-x-mark size-5 opacity-40 group-hover:opacity-70"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
+    <div class="flex-1"></div>
+    <button type="button" class="group self-start cursor-pointer" aria-label="close">
+      <span class="hero-x-mark size-5 opacity-40 group-hover:opacity-70"></span>
     </button>
   </div>
-</div><!-- </SmartwrkWeb.CoreComponents.flash> -->
+</div>
 
-  <!-- @caller lib/smartwrk_web/components/layouts.ex:103 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.flash> lib/smartwrk_web/components/core_components.ex:53 (smartwrk) --><div data-phx-loc="54" id="server-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="toast toast-top toast-end z-50" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}],[&quot;set_attr&quot;,{&quot;attr&quot;:[&quot;hidden&quot;,&quot;&quot;]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-server-error #server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}],[&quot;remove_attr&quot;,{&quot;attr&quot;:&quot;hidden&quot;}]]">
-  <div data-phx-loc="62" class="alert w-80 sm:w-96 max-w-80 sm:max-w-96 text-wrap alert-error">
+  <div id="server-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="toast toast-top toast-end z-50" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}],[&quot;set_attr&quot;,{&quot;attr&quot;:[&quot;hidden&quot;,&quot;&quot;]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-server-error #server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}],[&quot;remove_attr&quot;,{&quot;attr&quot;:&quot;hidden&quot;}]]">
+  <div class="alert w-80 sm:w-96 max-w-80 sm:max-w-96 text-wrap alert-error">
     
-    <!-- @caller lib/smartwrk_web/components/core_components.ex:68 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-exclamation-circle size-5 shrink-0"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
-    <div data-phx-loc="69">
-      <p data-phx-loc="70" class="font-semibold">Something went wrong!</p>
-      <p data-phx-loc="71"><!-- <:inner_block> lib/smartwrk_web/components/layouts.ex:103 (smartwrk) -->
+    <span class="hero-exclamation-circle size-5 shrink-0"></span>
+    <div>
+      <p class="font-semibold">Something went wrong!</p>
+      <p>
     Attempting to reconnect
-    <!-- @caller lib/smartwrk_web/components/layouts.ex:112 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-arrow-path ml-1 size-3 motion-safe:animate-spin"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
-  <!-- </:inner_block> --></p>
+    <span class="hero-arrow-path ml-1 size-3 motion-safe:animate-spin"></span>
+  </p>
     </div>
-    <div data-phx-loc="73" class="flex-1"></div>
-    <button data-phx-loc="74" type="button" class="group self-start cursor-pointer" aria-label="close">
-      <!-- @caller lib/smartwrk_web/components/core_components.ex:75 (smartwrk) --><!-- <SmartwrkWeb.CoreComponents.icon> lib/smartwrk_web/components/core_components.ex:443 (smartwrk) --><span data-phx-loc="444" class="hero-x-mark size-5 opacity-40 group-hover:opacity-70"></span><!-- </SmartwrkWeb.CoreComponents.icon> -->
+    <div class="flex-1"></div>
+    <button type="button" class="group self-start cursor-pointer" aria-label="close">
+      <span class="hero-x-mark size-5 opacity-40 group-hover:opacity-70"></span>
     </button>
   </div>
-</div><!-- </SmartwrkWeb.CoreComponents.flash> -->
-</div><!-- </SmartwrkWeb.Layouts.flash_group> --><!-- </SmartwrkWeb.Layouts.app> --><!-- </SmartwrkWeb.PostHTML.index> -->
-  <iframe hidden height="0" width="0" src="/phoenix/live_reload/frame"></iframe></body>
-</html><!-- </SmartwrkWeb.Layouts.root> -->
+</div>
+</div>
+  </body>
+</html>
