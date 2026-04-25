@@ -5,6 +5,17 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## v0.0.9 (2026-04-25)
+
+
+
+
+### Bug Fixes:
+
+* rebuild site with .nojekyll by andyl
+
+* auto-gen the .nojekyll file by andyl
+
 ## v0.0.8 (2026-04-25)
 
 
