@@ -3,12 +3,26 @@
 # exit immediately if any command fails
 set -e 
 
-bin/release                   
-mix compile                   
+# remove symlink if it exists 
+if [ -L docs/smartworks ]; then
+  rm docs/smartworks
+fi
 
+# commit outstanding git changes 
+if ! git diff-index --quiet HEAD -- || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+  git add .
+  git commit -am"chore: cleanup"
+fi
+
+# release 
+bin/release
+mix compile
+
+# export 
 bin/export                    
 git add .                   
 git commit -am"chore: export to HTML" 
 
+# push
 echo "----- PUSH TO GITHUB"  
 git push --follow-tags
