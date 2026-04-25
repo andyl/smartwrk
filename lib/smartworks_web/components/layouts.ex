@@ -110,8 +110,17 @@ defmodule SmartworksWeb.Layouts do
   end
 
   defp active?(nil, _path), do: false
-  defp active?(current, "/"), do: current == "/"
-  defp active?(current, path), do: current == path or String.starts_with?(current, path <> "/")
+
+  defp active?(current, path) do
+    prefix = String.trim_trailing(SmartworksWeb.Endpoint.path("/"), "/")
+    current = String.replace_prefix(current, prefix, "")
+    path = String.replace_prefix(path, prefix, "")
+
+    case path do
+      "/" -> current in ["", "/"]
+      _ -> current == path or String.starts_with?(current, path <> "/")
+    end
+  end
 
   @doc """
   Shows the flash group with standard titles and content.

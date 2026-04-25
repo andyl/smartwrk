@@ -23,7 +23,23 @@ defmodule Mix.Tasks.Smartworks.Export do
     # 3. Write sitemap
     File.write!(Path.join(@output, "sitemap.xml"), sitemap(exportable_paths()))
 
+    # 4. Recreate the URL-prefix self-symlink so absolute paths resolve when
+    # the docs/ directory is served at the filesystem root locally.
+    create_url_prefix_symlink()
+
     Mix.shell().info("Exported to #{@output}")
+  end
+
+  defp create_url_prefix_symlink do
+    case SmartworksWeb.Endpoint.script_name() do
+      [] ->
+        :ok
+
+      [name | _] ->
+        link = Path.join(@output, name)
+        File.rm_rf!(link)
+        File.ln_s!(".", link)
+    end
   end
 
   defp exportable_paths do
