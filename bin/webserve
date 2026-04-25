@@ -1,0 +1,21 @@
+#!/usr/bin/env bash 
+
+# use this to test serving static html files locally from the docs directory 
+
+cd docs 
+
+pwd 
+
+# create a symlink to emulate GitHub Pages access
+ls -al
+echo -----
+rm -f smartworks 
+ln -s ~/src/Web/smartworks/docs smartworks 
+ls -al
+echo -----
+
+# start the web server on port 8000 
+python3 -m http.server 8000 
+
+# remove symlink 
+rm -f smartworks 
